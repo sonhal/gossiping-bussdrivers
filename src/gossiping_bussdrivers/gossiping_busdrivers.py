@@ -35,7 +35,7 @@ class GossipingBusdrivers:
             self.tick()
 
     def simulate(self, num_ticks):
-        count = 0
+        count = 1
         for _ in range(num_ticks):
             self.tick()
             if self.is_all_gossip_known():

@@ -17,7 +17,7 @@ class Bussdriver:
 
     def gossip(self, bussdriver: "Bussdriver"):
         self._gossip.update(bussdriver._gossip)
-        bussdriver._gossip = self._gossip
+        bussdriver._gossip.update(self._gossip)
 
     def has_gossip(self, *gossip):
         gossip = set(gossip)
