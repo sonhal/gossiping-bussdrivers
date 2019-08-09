@@ -1,4 +1,4 @@
-from gossiping_bussdrivers.bussdriver import Bussdriver
+from gossiping_bussdrivers.busdriver import Busdriver
 
 
 class GossipingBusdrivers:
@@ -7,7 +7,7 @@ class GossipingBusdrivers:
         self._gossips = [object() for _ in routes]
         driver_data = list(zip(self._gossips, routes))
         self._bussdrivers = [
-            Bussdriver(route, gossip)
+            Busdriver(route, gossip)
             for
             gossip, route
             in

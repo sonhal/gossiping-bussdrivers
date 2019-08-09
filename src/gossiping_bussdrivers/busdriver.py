@@ -1,7 +1,7 @@
 import typing
 
 
-class Bussdriver:
+class Busdriver:
 
     def __init__(self, route: typing.Sequence, gossip):
         self._route = route
@@ -15,7 +15,7 @@ class Bussdriver:
             self._index = 0
         return next_stop
 
-    def gossip(self, bussdriver: "Bussdriver"):
+    def gossip(self, bussdriver: "Busdriver"):
         self._gossip.update(bussdriver._gossip)
         bussdriver._gossip.update(self._gossip)
 
@@ -23,5 +23,5 @@ class Bussdriver:
         gossip = set(gossip)
         return gossip.issubset(self._gossip)
 
-    def is_at_same_stop(self, bussdriver2: "Bussdriver"):
+    def is_at_same_stop(self, bussdriver2: "Busdriver"):
         return self._route[self._index] == bussdriver2._route[bussdriver2._index]

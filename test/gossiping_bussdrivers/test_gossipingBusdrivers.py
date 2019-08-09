@@ -1,6 +1,5 @@
 from unittest import TestCase
 
-from gossiping_bussdrivers.bussdriver import Bussdriver
 from gossiping_bussdrivers.gossiping_busdrivers import GossipingBusdrivers
 
 
@@ -36,7 +35,7 @@ class TestGossipingBusdrivers(TestCase):
     def test_simulate(self):
         self.routes = [[1, 2], [2], [1, 2, 3]]
         gbd = GossipingBusdrivers(self.routes)
-        self.assertEqual(1, gbd.simulate(2))
+        self.assertEqual(2, gbd.simulate(2))
 
         self.routes = [[1, 2], [2, 1], [1, 2]]
         gbd = GossipingBusdrivers(self.routes)

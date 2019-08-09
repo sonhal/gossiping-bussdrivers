@@ -1,4 +1,4 @@
-from gossiping_bussdrivers.bussdriver import Bussdriver
+from gossiping_bussdrivers.busdriver import Busdriver
 from pprint import pprint as pp
 
 from gossiping_bussdrivers.gossiping_busdrivers import GossipingBusdrivers

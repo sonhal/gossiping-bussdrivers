@@ -1,16 +1,16 @@
 import unittest
-from gossiping_bussdrivers.bussdriver import Bussdriver
+from gossiping_bussdrivers.busdriver import Busdriver
 
 
 class BussdriverTest(unittest.TestCase):
 
     def test_init(self):
         route = [2, 3, 4]
-        Bussdriver(route, object())
+        Busdriver(route, object())
 
     def test_next_stop(self):
         route = [2, 3, 4]
-        bussdriver = Bussdriver(route, object())
+        bussdriver = Busdriver(route, object())
         self.assertEqual(2, bussdriver.next_stop())
         self.assertEqual(3, bussdriver.next_stop())
         self.assertEqual(4, bussdriver.next_stop())
@@ -18,8 +18,8 @@ class BussdriverTest(unittest.TestCase):
 
     def test_gossip(self):
         route = [2, 3, 4]
-        bussdriver = Bussdriver(route, object())
-        bussdriver2 = Bussdriver(route, object())
+        bussdriver = Busdriver(route, object())
+        bussdriver2 = Busdriver(route, object())
         self.assertNotEqual(bussdriver2._gossip, bussdriver._gossip)
         bussdriver.gossip(bussdriver2)
         self.assertEqual(bussdriver2._gossip, bussdriver._gossip)
@@ -28,9 +28,9 @@ class BussdriverTest(unittest.TestCase):
         route = [2, 3, 4]
         gossip = object()
         gossip2 = object()
-        bussdriver = Bussdriver(route, gossip)
+        bussdriver = Busdriver(route, gossip)
         self.assertFalse(bussdriver.has_gossip(gossip2))
-        bussdriver2 = Bussdriver(route, gossip2)
+        bussdriver2 = Busdriver(route, gossip2)
         bussdriver.gossip(bussdriver2)
         self.assertTrue(bussdriver.has_gossip(gossip2))
 
@@ -38,8 +38,8 @@ class BussdriverTest(unittest.TestCase):
         route = [2, 3, 4]
         gossip = object()
         gossip2 = object()
-        bussdriver = Bussdriver(route, gossip)
-        bussdriver2 = Bussdriver(route, gossip2)
+        bussdriver = Busdriver(route, gossip)
+        bussdriver2 = Busdriver(route, gossip2)
         self.assertTrue(bussdriver.is_at_same_stop(bussdriver2))
         bussdriver2.next_stop()
         self.assertFalse(bussdriver.is_at_same_stop(bussdriver2))
